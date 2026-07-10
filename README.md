@@ -1,7 +1,5 @@
 # AYIO — Proposta de Naming 2026
 
-![AYIO Branding](assets/banner.png)
-
 ## 🎯 Sobre o Projeto
 
 Este repositório contém a proposta estratégica de naming para a **AYIO**, um estúdio de software focado em inteligência artificial e impacto estratégico. O projeto foi desenvolvido como uma landing page interativa e minimalista que detalha a transição da marca antiga (Nexus) para a nova identidade verbal.
