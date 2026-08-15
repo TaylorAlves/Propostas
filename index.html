@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-BR" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AYIO — Proposta de Naming 2026</title>
+    <title>Kemizon — Proposta de Serviços de Design (Pó de Açaí)</title>
+    <meta name="description"
+        content="Proposta de serviços de design para o lançamento da linha de pó de açaí da Kemizon, em continuidade à identidade Zemizon.">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <!-- Importação da Geist Sans via CDN -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/geist-sans@1.0.0/dist/font.css">
-    
     <script>
         tailwind.config = {
             theme: {
@@ -35,16 +35,6 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        .chart-container {
-            position: relative;
-            width: 100%;
-            max-width: 500px;
-            margin-left: auto;
-            margin-right: auto;
-            height: 350px;
-            max-height: 400px;
-        }
-
         .section-intro {
             border-left: 1px solid #212121;
             padding-left: 1.5rem;
@@ -67,321 +57,438 @@
             transition: width 0.2s ease;
         }
 
-        .nav-item:hover::after, .nav-item.active::after {
+        .nav-item:hover::after,
+        .nav-item.active::after {
             width: 100%;
         }
 
-        /* Estilo para listas minimalistas */
         .list-minimal {
             list-style-type: none;
         }
+
         .list-minimal li::before {
             content: "—";
             margin-right: 0.5rem;
             color: #6B7280;
         }
+
+        .price-row {
+            display: grid;
+            grid-template-columns: 1fr auto auto;
+            gap: 2rem;
+            align-items: baseline;
+            padding: 1.25rem 0;
+            border-bottom: 1px solid #E5E7EB;
+        }
+
+        .price-row.total-row {
+            border-top: 1px solid #212121;
+            border-bottom: none;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(12px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .reveal.in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .reveal {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+        }
     </style>
 </head>
+
 <body class="selection:bg-deep-black selection:text-ice-white">
 
-    <!-- Chosen Palette: Ice & Ash (Branco Gelo #F9FAFB, Preto #212121, Cinza #6B7280). -->
-    
-    <!-- Application Structure Plan: A aplicação foi estruturada como uma proposta estratégica linear em 2026. A arquitetura de informação prioriza a leitura e a compreensão do "porquê" por trás do nome. Dividimos em: 1. Definição (Capa), 2. Diagnóstico (O problema com Nexus), 3. Tese (A semântica de AYIO), 4. Validação (Atributos técnicos) e 5. Conclusão. Este fluxo foca no convencimento racional e na clareza tipográfica. -->
-
-    <!-- Visualization & Content Choices: 
-    1. Diagnóstico de Naming: Gráfico de Radar (Chart.js) em escala de cinza para comparar Nexus e AYIO em termos de originalidade e disponibilidade.
-    2. Anatomia Semântica: Interface interativa baseada em blocos de texto que explicam o sufixo e prefixo.
-    3. Pilares: Lista minimalista com hierarquia de pesos tipográficos.
-    -->
-
-    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
-
-    <!-- Navegação Minimalista -->
     <nav class="fixed top-0 left-0 w-full bg-ice-white/80 backdrop-blur-md z-50 border-b border-light-gray">
         <div class="max-w-5xl mx-auto px-6 h-20 flex items-center justify-between">
-            <span class="font-bold tracking-tighter text-xl">AYIO</span>
+            <span class="font-bold tracking-tighter text-xl">Kemizon<span class="text-ash-gray font-light"> · Zemizon
+                    Açaí</span></span>
             <div class="hidden md:flex space-x-8 text-[11px] uppercase tracking-widest font-medium">
-                <a href="#diagnostico" class="nav-item">Diagnóstico</a>
-                <a href="#tese" class="nav-item">Tese</a>
-                <a href="#validacao" class="nav-item">Validação</a>
-                <a href="#posicionamento" class="nav-item">Posicionamento</a>
+                <a href="#desafio" class="nav-item">Desafio</a>
+                <a href="#escopo" class="nav-item">Escopo</a>
+                <a href="#investimento" class="nav-item">Investimento</a>
+                <a href="#proximos-passos" class="nav-item">Próximos Passos</a>
             </div>
         </div>
     </nav>
 
-    <!-- Hero: O Nome -->
-    <section class="min-h-screen flex flex-col justify-center px-6 max-w-5xl mx-auto">
-        <p class="text-[10px] uppercase tracking-[0.3em] text-ash-gray mb-4">Proposta de Naming — 2026</p>
-        <h1 class="text-7xl md:text-[10rem] font-bold tracking-tighter leading-none mb-8">AYIO</h1>
-        <p class="text-xl md:text-2xl font-light text-ash-gray max-w-2xl leading-snug">
-            Um nome desenhado para a convergência entre software inteligente e impacto estratégico real.
+    <section class="min-h-screen flex flex-col justify-center px-6 max-w-5xl mx-auto pt-20">
+        <p class="text-[10px] uppercase tracking-[0.3em] text-ash-gray mb-4 font-mono">Proposta de Serviços de Design —
+            Agosto / 2026</p>
+        <h1 class="text-5xl md:text-7xl font-bold tracking-tighter leading-none mb-8 max-w-3xl">
+            Levando o padrão<br>
+            <span class="font-light italic">Zemizon</span> para a nova<br>
+            linha de pó de açaí
+        </h1>
+        <p class="text-lg md:text-xl font-light text-ash-gray max-w-2xl leading-snug">
+            Um sistema visual completo — redes sociais, embalagens, mockups e materiais comerciais — desenvolvido em
+            continuidade à identidade já validada com o produto de acerola, para o lançamento via Centelha SP.
         </p>
-        <div class="mt-16 border-t border-light-gray pt-8 flex gap-12">
+        <div class="mt-16 border-t border-light-gray pt-8 flex flex-wrap gap-12">
             <div>
-                <span class="block text-[10px] uppercase text-ash-gray mb-1">Status</span>
-                <span class="text-sm font-medium">Pronto para registro</span>
+                <span class="block text-[10px] uppercase text-ash-gray mb-1 font-mono tracking-widest">Data</span>
+                <span class="text-sm font-medium">Agosto / 2026</span>
             </div>
             <div>
-                <span class="block text-[10px] uppercase text-ash-gray mb-1">Posicionamento</span>
-                <span class="text-sm font-medium">AI Software Studio</span>
+                <span class="block text-[10px] uppercase text-ash-gray mb-1 font-mono tracking-widest">Elaborado
+                    por</span>
+                <span class="text-sm font-medium">Taylor Alves</span>
+            </div>
+            <div>
+                <span class="block text-[10px] uppercase text-ash-gray mb-1 font-mono tracking-widest">Preparado
+                    para</span>
+                <span class="text-sm font-medium">Kemizon — A/C Weliton</span>
             </div>
         </div>
     </section>
 
-    <!-- Seção 01: Diagnóstico -->
-    <section id="diagnostico" class="py-32 px-6 max-w-5xl mx-auto border-t border-light-gray">
+    <section id="desafio" class="py-32 px-6 max-w-5xl mx-auto border-t border-light-gray">
         <div class="section-intro">
-            <h2 class="text-2xl font-bold uppercase tracking-tight">01. Diagnóstico do Cenário</h2>
-            <p class="text-ash-gray mt-2 max-w-xl text-sm">Análise crítica sobre a saturação do nome atual e a necessidade de uma fundação verbal exclusiva para 2026.</p>
+            <h2 class="text-2xl font-bold uppercase tracking-tight">01. O Desafio</h2>
+            <p class="text-ash-gray mt-2 max-w-xl text-sm">A Kemizon já provou que o padrão visual da linha Zemizon
+                funciona. O açaí precisa herdar essa confiança sem virar uma cópia da acerola.</p>
         </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
-            <div>
-                <h3 class="text-lg font-bold mb-4 italic">O Limite do Nexus</h3>
-                <p class="text-sm text-ash-gray leading-relaxed mb-6">
-                    O nome "Nexus" atingiu seu teto de escalabilidade. Em um mercado global, a ambiguidade fonética e a falta de exclusividade digital impedem a marca de se consolidar como líder em IA. 
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-20 items-start reveal">
+            <ul class="list-minimal text-sm space-y-5 text-ash-gray">
+                <li>A acerola já tem identidade e padrão visual consolidados, testados no site e nas redes da Kemizon.
+                </li>
+                <li>O pó de açaí é um produto novo dentro da mesma linha Zemizon — precisa de rosto próprio, mas do
+                    mesmo DNA.</li>
+                <li>O primeiro ciclo de comunicação cobre praticamente todos os pontos de contato da marca: redes
+                    sociais, embalagens, site, comercial e WhatsApp.</li>
+                <li>Tudo isso precisa nascer coerente entre si desde a primeira arte publicada — não há espaço para
+                    peças soltas.</li>
+            </ul>
+            <div class="bg-deep-black text-ice-white p-10 flex flex-col gap-6">
+                <span class="text-[10px] uppercase tracking-[0.4em] opacity-50 font-mono">Meta principal</span>
+                <p class="text-2xl font-light leading-snug">
+                    Construir o sistema visual do pó de açaí como <span class="font-bold">extensão natural da
+                        Zemizon</span> — reconhecível, mas com identidade própria.
                 </p>
-                <ul class="list-minimal text-xs space-y-3 text-ash-gray">
-                    <li>Saturação em registros de software</li>
-                    <li>Falta de domínio .com.br proprietário</li>
-                    <li>Conotação de tecnologia genérica dos anos 2010</li>
-                </ul>
-            </div>
-            <div class="chart-container">
-                <canvas id="diagnosticoChart"></canvas>
             </div>
         </div>
     </section>
 
-    <!-- Seção 02: Tese Semântica -->
-    <section id="tese" class="py-32 px-6 bg-white border-y border-light-gray">
+    <section id="escopo" class="py-32 px-6 bg-white border-y border-light-gray">
         <div class="max-w-5xl mx-auto">
             <div class="section-intro">
-                <h2 class="text-2xl font-bold uppercase tracking-tight">02. Tese Semântica</h2>
-                <p class="text-ash-gray mt-2 max-w-xl text-sm">A desconstrução da palavra AYIO revela uma estrutura focada na lógica computacional e na inteligência.</p>
+                <h2 class="text-2xl font-bold uppercase tracking-tight">02. Escopo &amp; Entregáveis</h2>
+                <p class="text-ash-gray mt-2 max-w-xl text-sm">Sete frentes de trabalho, cobrindo o primeiro ciclo
+                    completo de lançamento do produto.</p>
             </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mt-12">
-                <!-- Bloco AY -->
-                <div class="p-8 border border-light-gray hover:border-deep-black transition-colors">
-                    <span class="text-[10px] font-mono text-ash-gray">Prefix</span>
-                    <h3 class="text-4xl font-bold my-4">AY</h3>
-                    <p class="text-sm text-ash-gray leading-relaxed">
-                        A fonética direta de <span class="text-deep-black font-medium">AI</span>. Estabelece a categoria de atuação no primeiro contato auditivo, sem a necessidade de explicações extras.
-                    </p>
-                </div>
-                <!-- Bloco I -->
-                <div class="p-8 border border-light-gray hover:border-deep-black transition-colors">
-                    <span class="text-[10px] font-mono text-ash-gray">Core</span>
-                    <h3 class="text-4xl font-bold my-4">I</h3>
-                    <p class="text-sm text-ash-gray leading-relaxed">
-                        Representa <span class="text-deep-black font-medium">Intelligence</span> e <span class="text-deep-black font-medium">Input</span>. É o eixo central que sustenta o processamento e a lógica do software.
-                    </p>
-                </div>
-                <!-- Bloco O -->
-                <div class="p-8 border border-light-gray hover:border-deep-black transition-colors">
-                    <span class="text-[10px] font-mono text-ash-gray">Suffix</span>
-                    <h3 class="text-4xl font-bold my-4">O</h3>
-                    <p class="text-sm text-ash-gray leading-relaxed">
-                        O símbolo de <span class="text-deep-black font-medium">Output</span> e totalidade. Fecha o ciclo do processamento, entregando o impacto estratégico final ao usuário.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Seção 03: Validação Estratégica -->
-    <section id="validacao" class="py-32 px-6 max-w-5xl mx-auto">
-        <div class="section-intro">
-            <h2 class="text-2xl font-bold uppercase tracking-tight">03. Validação Técnica</h2>
-            <p class="text-ash-gray mt-2 max-w-xl text-sm">Por que AYIO é a escolha definitiva em termos de viabilidade e percepção.</p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-24 items-start">
-            <div class="space-y-12">
-                <div class="group">
-                    <h4 class="text-xs uppercase tracking-widest font-bold mb-2 transition-colors group-hover:text-ash-gray">Internacionalização</h4>
-                    <p class="text-sm text-ash-gray">Um nome curto (4 letras), de fácil pronúncia em inglês, português e espanhol. Sem barreiras fonéticas para expansão.</p>
-                </div>
-                <div class="group">
-                    <h4 class="text-xs uppercase tracking-widest font-bold mb-2 transition-colors group-hover:text-ash-gray">Disponibilidade</h4>
-                    <p class="text-sm text-ash-gray">Possibilidade de domínio proprietário. Baixa concorrência em buscadores para o termo exato.</p>
-                </div>
-            </div>
-            <div class="bg-deep-black text-ice-white p-12 flex flex-col justify-between">
-                <span class="text-[10px] uppercase tracking-[0.4em] opacity-50">Assinatura Estratégica</span>
-                <div>
-                    <h4 class="text-3xl font-light leading-tight">Software inteligente,<br><span class="font-bold">impacto estratégico.</span></h4>
-                </div>
-                <span class="text-xs font-mono mt-8">AYIO — AI Software Studio</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Seção 04: Posicionamento -->
-    <section id="posicionamento" class="py-32 px-6 max-w-5xl mx-auto border-t border-light-gray">
-        <div class="section-intro">
-            <h2 class="text-2xl font-bold uppercase tracking-tight">04. O Novo Posicionamento</h2>
-            <p class="text-ash-gray mt-2 max-w-xl text-sm">A evolução de uma agência de desenvolvimento para um estúdio de produtos de inteligência.</p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center mt-16">
-            <!-- Mockup Visual Abstrato -->
-            <div class="relative w-full aspect-[4/3] bg-[#E5E7EB]/30 rounded-2xl overflow-hidden border border-light-gray flex items-center justify-center p-8 lg:p-12">
-                <!-- Browser/App Frame -->
-                <div class="w-full h-full bg-white rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-[#E5E7EB] flex flex-col overflow-hidden transition-transform duration-700 hover:scale-[1.02]">
-                    <!-- Header/Nav do Mockup -->
-                    <div class="h-10 border-b border-light-gray flex items-center px-4 justify-between bg-ice-white/50">
-                        <div class="flex gap-1.5">
-                            <div class="w-2.5 h-2.5 rounded-full bg-gray-300"></div>
-                            <div class="w-2.5 h-2.5 rounded-full bg-gray-300"></div>
-                            <div class="w-2.5 h-2.5 rounded-full bg-gray-300"></div>
-                        </div>
-                        <!-- Logo discreto no canto -->
-                        <span class="text-[9px] font-bold tracking-tighter text-deep-black">AYIO</span>
+            <div class="reveal">
+                <div
+                    class="grid grid-cols-1 md:grid-cols-[64px_1fr_auto] gap-x-8 gap-y-2 items-start py-8 border-t border-light-gray group">
+                    <span class="text-[10px] font-mono text-ash-gray uppercase tracking-widest pt-1">01</span>
+                    <div>
+                        <h3 class="text-lg font-bold mb-2 group-hover:text-ash-gray transition-colors">Artes para redes
+                            sociais</h3>
+                        <p class="text-sm text-ash-gray leading-relaxed max-w-lg">Primeiro ciclo de comunicação do novo
+                            produto, distribuído ao longo de ~3 meses, a partir de conteúdos e copies fornecidos pela
+                            Kemizon, adaptados a cada formato de plataforma.</p>
+                        <p class="text-[11px] font-mono text-ash-gray mt-3 tracking-wide">→ 34 artes finais para redes
+                            sociais</p>
                     </div>
-                    <!-- Body do Mockup -->
-                    <div class="flex-1 p-5 flex flex-col gap-4 bg-white">
-                        <div class="w-1/3 h-4 bg-ice-white rounded"></div>
-                        <div class="w-full flex-1 bg-ice-white rounded-md border border-light-gray/50"></div>
-                        <div class="flex gap-4">
-                            <div class="w-1/2 h-8 bg-ice-white rounded"></div>
-                            <div class="w-1/2 h-8 bg-ice-white rounded"></div>
-                        </div>
+                    <div class="text-right">
+                        <span class="text-3xl font-bold tracking-tighter">34</span>
+                        <span
+                            class="block text-[10px] text-ash-gray font-mono uppercase tracking-widest mt-0.5">unidades</span>
                     </div>
                 </div>
-            </div>
-
-            <!-- Conteúdo Estratégico -->
-            <div class="space-y-10">
-                <div>
-                    <span class="text-[10px] uppercase tracking-[0.3em] text-ash-gray block mb-3">Slogan</span>
-                    <h3 class="text-3xl font-light leading-tight text-deep-black">Software inteligente,<br><span class="font-bold">impacto estratégico.</span></h3>
+                <div
+                    class="grid grid-cols-1 md:grid-cols-[64px_1fr_auto] gap-x-8 gap-y-2 items-start py-8 border-t border-light-gray group">
+                    <span class="text-[10px] font-mono text-ash-gray uppercase tracking-widest pt-1">02</span>
+                    <div>
+                        <h3 class="text-lg font-bold mb-2 group-hover:text-ash-gray transition-colors">Embalagem
+                            primária</h3>
+                        <p class="text-sm text-ash-gray leading-relaxed max-w-lg">Identidade visual e arte final da
+                            embalagem primária do açaí, considerando as informações técnicas, regulatórias e de
+                            posicionamento fornecidas pela Kemizon.</p>
+                        <p class="text-[11px] font-mono text-ash-gray mt-3 tracking-wide">→ arquivo editável + arquivo
+                            final para produção</p>
+                    </div>
+                    <div class="text-right">
+                        <span class="text-3xl font-bold tracking-tighter">1</span>
+                        <span
+                            class="block text-[10px] text-ash-gray font-mono uppercase tracking-widest mt-0.5">peça</span>
+                    </div>
                 </div>
-                
-                <div>
-                    <span class="text-[10px] uppercase tracking-[0.3em] text-ash-gray block mb-3">Descriptor</span>
-                    <p class="text-lg font-mono text-ash-gray">AYIO — <span class="text-deep-black font-medium">AI Software Studio.</span></p>
+                <div
+                    class="grid grid-cols-1 md:grid-cols-[64px_1fr_auto] gap-x-8 gap-y-2 items-start py-8 border-t border-light-gray group">
+                    <span class="text-[10px] font-mono text-ash-gray uppercase tracking-widest pt-1">03</span>
+                    <div>
+                        <h3 class="text-lg font-bold mb-2 group-hover:text-ash-gray transition-colors">Embalagem
+                            secundária</h3>
+                        <p class="text-sm text-ash-gray leading-relaxed max-w-lg">Arte final mantendo coerência visual
+                            com a embalagem primária e com a identidade da linha Zemizon.</p>
+                        <p class="text-[11px] font-mono text-ash-gray mt-3 tracking-wide">→ arquivo editável + arquivo
+                            final para produção</p>
+                    </div>
+                    <div class="text-right">
+                        <span class="text-3xl font-bold tracking-tighter">1</span>
+                        <span
+                            class="block text-[10px] text-ash-gray font-mono uppercase tracking-widest mt-0.5">peça</span>
+                    </div>
                 </div>
-
-                <div class="pt-8 border-t border-light-gray">
-                    <span class="text-[10px] uppercase tracking-[0.3em] text-ash-gray block mb-3">Argumento</span>
-                    <p class="text-sm text-ash-gray leading-relaxed">
-                        Deixamos de ser apenas "desenvolvimento" para sermos um <span class="text-deep-black font-medium">estúdio de produtos de inteligência</span>. Nossa entrega vai além do código; desenhamos e implementamos soluções que transformam a estratégia do negócio.
-                    </p>
+                <div
+                    class="grid grid-cols-1 md:grid-cols-[64px_1fr_auto] gap-x-8 gap-y-2 items-start py-8 border-t border-light-gray group">
+                    <span class="text-[10px] font-mono text-ash-gray uppercase tracking-widest pt-1">04</span>
+                    <div>
+                        <h3 class="text-lg font-bold mb-2 group-hover:text-ash-gray transition-colors">Mockups</h3>
+                        <p class="text-sm text-ash-gray leading-relaxed max-w-lg">Renders do novo produto para uso em
+                            site, redes sociais, apresentações, materiais comerciais e demais ações de divulgação.</p>
+                        <p class="text-[11px] font-mono text-ash-gray mt-3 tracking-wide">→ 25 mockups em formatos
+                            digitais</p>
+                    </div>
+                    <div class="text-right">
+                        <span class="text-3xl font-bold tracking-tighter">25</span>
+                        <span
+                            class="block text-[10px] text-ash-gray font-mono uppercase tracking-widest mt-0.5">unidades</span>
+                    </div>
+                </div>
+                <div
+                    class="grid grid-cols-1 md:grid-cols-[64px_1fr_auto] gap-x-8 gap-y-2 items-start py-8 border-t border-light-gray group">
+                    <span class="text-[10px] font-mono text-ash-gray uppercase tracking-widest pt-1">05</span>
+                    <div>
+                        <h3 class="text-lg font-bold mb-2 group-hover:text-ash-gray transition-colors">Lâmina comercial
+                            para drogarias</h3>
+                        <p class="text-sm text-ash-gray leading-relaxed max-w-lg">Peça de apresentação do produto
+                            voltada a drogarias, farmácias e potenciais parceiros comerciais.</p>
+                        <p class="text-[11px] font-mono text-ash-gray mt-3 tracking-wide">→ arquivo editável + versão
+                            final digital</p>
+                    </div>
+                    <div class="text-right">
+                        <span class="text-3xl font-bold tracking-tighter">1</span>
+                        <span
+                            class="block text-[10px] text-ash-gray font-mono uppercase tracking-widest mt-0.5">peça</span>
+                    </div>
+                </div>
+                <div
+                    class="grid grid-cols-1 md:grid-cols-[64px_1fr_auto] gap-x-8 gap-y-2 items-start py-8 border-t border-light-gray group">
+                    <span class="text-[10px] font-mono text-ash-gray uppercase tracking-widest pt-1">06</span>
+                    <div>
+                        <h3 class="text-lg font-bold mb-2 group-hover:text-ash-gray transition-colors">Arte para
+                            WhatsApp Business</h3>
+                        <p class="text-sm text-ash-gray leading-relaxed max-w-lg">Material visual do novo produto para
+                            uso no canal de atendimento comercial da Kemizon.</p>
+                        <p class="text-[11px] font-mono text-ash-gray mt-3 tracking-wide">→ arquivo final para WhatsApp
+                            Business</p>
+                    </div>
+                    <div class="text-right">
+                        <span class="text-3xl font-bold tracking-tighter">1</span>
+                        <span
+                            class="block text-[10px] text-ash-gray font-mono uppercase tracking-widest mt-0.5">peça</span>
+                    </div>
+                </div>
+                <div
+                    class="grid grid-cols-1 md:grid-cols-[64px_1fr_auto] gap-x-8 gap-y-2 items-start py-8 border-t border-light-gray group">
+                    <span class="text-[10px] font-mono text-ash-gray uppercase tracking-widest pt-1">07</span>
+                    <div>
+                        <h3 class="text-lg font-bold mb-2 group-hover:text-ash-gray transition-colors">Hero banner para
+                            o site</h3>
+                        <p class="text-sm text-ash-gray leading-relaxed max-w-lg">Abordagem visual própria para o açaí —
+                            distinta da comunicação atual da acerola, mas coerente com a identidade Kemizon e Zemizon.
+                        </p>
+                        <p class="text-[11px] font-mono text-ash-gray mt-3 tracking-wide">→ arquivo final para o site
+                        </p>
+                    </div>
+                    <div class="text-right">
+                        <span class="text-3xl font-bold tracking-tighter">1</span>
+                        <span
+                            class="block text-[10px] text-ash-gray font-mono uppercase tracking-widest mt-0.5">peça</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <section id="investimento" class="py-32 px-6 max-w-5xl mx-auto">
+        <div class="section-intro">
+            <h2 class="text-2xl font-bold uppercase tracking-tight">03. Investimento</h2>
+            <p class="text-ash-gray mt-2 max-w-xl text-sm">Valores por serviço, considerando reaproveitamento do padrão
+                visual já validado com a acerola.</p>
+        </div>
+        <div class="reveal mb-16">
+            <div class="grid grid-cols-[1fr_auto_auto] gap-8 pb-3 border-b border-deep-black">
+                <span class="text-[10px] uppercase tracking-[0.2em] text-ash-gray font-mono">Serviço</span>
+                <span class="text-[10px] uppercase tracking-[0.2em] text-ash-gray font-mono text-right">Qtd.</span>
+                <span class="text-[10px] uppercase tracking-[0.2em] text-ash-gray font-mono text-right">Valor</span>
+            </div>
+            <div class="price-row">
+                <span class="text-sm font-medium">Artes para redes sociais</span>
+                <span class="text-sm font-mono text-ash-gray text-right">34</span>
+                <span class="text-sm font-mono text-right">R$ 3.400</span>
+            </div>
+            <div class="price-row">
+                <span class="text-sm font-medium">Embalagem primária</span>
+                <span class="text-sm font-mono text-ash-gray text-right">1</span>
+                <span class="text-sm font-mono text-right">R$ 2.800</span>
+            </div>
+            <div class="price-row">
+                <span class="text-sm font-medium">Embalagem secundária</span>
+                <span class="text-sm font-mono text-ash-gray text-right">1</span>
+                <span class="text-sm font-mono text-right">R$ 1.800</span>
+            </div>
+            <div class="price-row">
+                <span class="text-sm font-medium">Mockups</span>
+                <span class="text-sm font-mono text-ash-gray text-right">25</span>
+                <span class="text-sm font-mono text-right">R$ 1.750</span>
+            </div>
+            <div class="price-row">
+                <span class="text-sm font-medium">Lâmina comercial</span>
+                <span class="text-sm font-mono text-ash-gray text-right">1</span>
+                <span class="text-sm font-mono text-right">R$ 700</span>
+            </div>
+            <div class="price-row">
+                <span class="text-sm font-medium">Arte WhatsApp Business</span>
+                <span class="text-sm font-mono text-ash-gray text-right">1</span>
+                <span class="text-sm font-mono text-right">R$ 250</span>
+            </div>
+            <div class="price-row">
+                <span class="text-sm font-medium">Hero banner para o site</span>
+                <span class="text-sm font-mono text-ash-gray text-right">1</span>
+                <span class="text-sm font-mono text-right">R$ 600</span>
+            </div>
+            <div class="price-row total-row">
+                <span class="text-base font-bold uppercase tracking-tight">Total</span>
+                <span></span>
+                <span class="text-lg font-bold font-mono text-right">R$ 11.300</span>
+            </div>
+        </div>
+        <div class="reveal grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div>
+                <span class="block text-[10px] uppercase text-ash-gray mb-3 font-mono tracking-widest">Rodadas de
+                    ajuste</span>
+                <p class="text-sm text-ash-gray leading-relaxed">2 rodadas de ajuste incluídas por serviço. Rodadas
+                    adicionais são cobradas à parte, com valor combinado antes do início do ajuste.</p>
+            </div>
+            <div>
+                <span class="block text-[10px] uppercase text-ash-gray mb-3 font-mono tracking-widest">Condições de
+                    pagamento</span>
+                <p class="text-sm text-ash-gray leading-relaxed">40% na aprovação da proposta, 30% na entrega da
+                    primeira leva de materiais e 30% na entrega final do ciclo.</p>
+            </div>
+            <div>
+                <span class="block text-[10px] uppercase text-ash-gray mb-3 font-mono tracking-widest">Prazo
+                    estimado</span>
+                <p class="text-sm text-ash-gray leading-relaxed">Embalagens, hero banner, lâmina e arte de WhatsApp
+                    entregues nas primeiras semanas. Artes de redes sociais e mockups distribuídos ao longo de ~3 meses.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="proximos-passos" class="py-32 px-6 max-w-5xl mx-auto border-t border-light-gray">
+        <div class="section-intro">
+            <h2 class="text-2xl font-bold uppercase tracking-tight">04. Próximos Passos</h2>
+            <p class="text-ash-gray mt-2 max-w-xl text-sm">Do aceite da proposta ao primeiro lote de materiais prontos
+                para o lançamento.</p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 reveal">
+            <div class="group">
+                <div class="border-t-2 border-deep-black pt-5 transition-colors group-hover:border-ash-gray">
+                    <span class="text-[10px] font-mono text-ash-gray uppercase tracking-widest">01</span>
+                    <h3 class="text-base font-bold mt-2 mb-2 group-hover:text-ash-gray transition-colors">Aprovação</h3>
+                    <p class="text-sm text-ash-gray leading-relaxed">Aprovação desta proposta e alinhamento do escopo.
+                    </p>
+                </div>
+            </div>
+            <div class="group">
+                <div class="border-t-2 border-deep-black pt-5 transition-colors group-hover:border-ash-gray">
+                    <span class="text-[10px] font-mono text-ash-gray uppercase tracking-widest">02</span>
+                    <h3 class="text-base font-bold mt-2 mb-2 group-hover:text-ash-gray transition-colors">Briefing
+                        técnico</h3>
+                    <p class="text-sm text-ash-gray leading-relaxed">Envio de conteúdos, copies, referências e
+                        informações técnicas/regulatórias do produto pela Kemizon.</p>
+                </div>
+            </div>
+            <div class="group">
+                <div class="border-t-2 border-deep-black pt-5 transition-colors group-hover:border-ash-gray">
+                    <span class="text-[10px] font-mono text-ash-gray uppercase tracking-widest">03</span>
+                    <h3 class="text-base font-bold mt-2 mb-2 group-hover:text-ash-gray transition-colors">Primeiro lote
+                    </h3>
+                    <p class="text-sm text-ash-gray leading-relaxed">Produção de embalagens, hero banner, lâmina
+                        comercial e arte de WhatsApp — materiais essenciais para o lançamento.</p>
+                </div>
+            </div>
+            <div class="group">
+                <div class="border-t-2 border-deep-black pt-5 transition-colors group-hover:border-ash-gray">
+                    <span class="text-[10px] font-mono text-ash-gray uppercase tracking-widest">04</span>
+                    <h3 class="text-base font-bold mt-2 mb-2 group-hover:text-ash-gray transition-colors">Ciclo contínuo
+                    </h3>
+                    <p class="text-sm text-ash-gray leading-relaxed">Entrega das 34 artes de redes sociais e dos 25
+                        mockups em lotes, ao longo de ~3 meses.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <footer class="py-20 px-6 border-t border-light-gray">
         <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
             <div>
-                <span class="text-2xl font-bold tracking-tighter">AYIO</span>
-                <p class="text-[10px] text-ash-gray mt-2 uppercase tracking-widest">© 2026 Naming Proposal</p>
+                <span class="text-2xl font-bold tracking-tighter">Kemizon<span class="font-light"> · Zemizon
+                        Açaí</span></span>
+                <p class="text-[10px] text-ash-gray mt-2 uppercase tracking-widest font-mono">Proposta de Serviços de
+                    Design — Pó de Açaí</p>
             </div>
             <div class="text-[10px] text-ash-gray font-mono uppercase tracking-widest text-right">
-                Elaborado por ©Taylor Alves<br>Brand Strategy & Identity
+                Elaborado por Taylor Alves<br>
+                <a href="mailto:contato@tayloralves.com"
+                    class="hover:text-deep-black transition-colors">contato@tayloralves.com</a>
+                <span class="mx-1">·</span>
+                +55 (91) 99380-8014<br>
+                <span class="mt-2 block">© 2026 Taylor Alves</span>
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript: Lógica de Interação e Dados -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            
-            // Configuração do Gráfico de Diagnóstico (Escala de Cinza)
-            const initCharts = () => {
-                const ctx = document.getElementById('diagnosticoChart').getContext('2d');
-                
-                new Chart(ctx, {
-                    type: 'radar',
-                    data: {
-                        labels: ['Originalidade', 'Diferenciação', 'Escalabilidade', 'Domínio .com.br', 'Resonância IA'],
-                        datasets: [
-                            {
-                                label: 'Nexus (Atual)',
-                                data: [30, 25, 45, 10, 35],
-                                backgroundColor: 'rgba(107, 114, 128, 0.1)',
-                                borderColor: '#6B7280',
-                                borderWidth: 1,
-                                pointRadius: 2,
-                                pointBackgroundColor: '#6B7280'
-                            },
-                            {
-                                label: 'AYIO (Proposta)',
-                                data: [95, 90, 95, 100, 90],
-                                backgroundColor: 'rgba(33, 33, 33, 0.15)',
-                                borderColor: '#212121',
-                                borderWidth: 2,
-                                pointRadius: 4,
-                                pointBackgroundColor: '#212121'
-                            }
-                        ]
-                    },
-                    options: {
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        scales: {
-                            r: {
-                                angleLines: { color: '#E5E7EB' },
-                                grid: { color: '#F3F4F6' },
-                                ticks: { display: false, stepSize: 20 },
-                                pointLabels: {
-                                    font: { size: 9, family: 'Geist Sans', weight: '500' },
-                                    color: '#6B7280'
-                                }
-                            }
-                        },
-                        plugins: {
-                            legend: {
-                                position: 'bottom',
-                                labels: {
-                                    usePointStyle: true,
-                                    font: { size: 10, family: 'Geist Sans' },
-                                    padding: 20
-                                }
-                            }
-                        }
-                    }
-                });
-            };
+            const revealEls = document.querySelectorAll('.reveal');
+            if ('IntersectionObserver' in window) {
+                const io = new IntersectionObserver((entries) => {
+                    entries.forEach(e => {
+                        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+                    });
+                }, { threshold: 0.1 });
+                revealEls.forEach(el => io.observe(el));
+            } else {
+                revealEls.forEach(el => el.classList.add('in'));
+            }
 
-            // Destaque de Navegação Ativa
             const setupNavHighlight = () => {
                 const sections = document.querySelectorAll('section[id]');
                 const navLinks = document.querySelectorAll('.nav-item');
-
                 const updateNav = () => {
                     let current = '';
                     sections.forEach(section => {
-                        const sectionTop = section.offsetTop;
-                        if (window.scrollY >= sectionTop - 150) {
-                            current = section.getAttribute('id');
-                        }
+                        if (window.scrollY >= section.offsetTop - 150) { current = section.getAttribute('id'); }
                     });
-
-                    // Verifica se chegou no fim da página para ativar a última seção
                     if ((window.innerHeight + Math.round(window.scrollY)) >= document.body.offsetHeight - 50) {
                         current = sections[sections.length - 1].getAttribute('id');
                     }
-
                     navLinks.forEach(link => {
                         link.classList.remove('active');
-                        if (current && link.getAttribute('href').includes(current)) {
-                            link.classList.add('active');
-                        }
+                        if (current && link.getAttribute('href').includes(current)) { link.classList.add('active'); }
                     });
                 };
-
                 window.addEventListener('scroll', updateNav);
                 updateNav();
             };
 
-            initCharts();
             setupNavHighlight();
         });
     </script>
 </body>
+
 </html>
